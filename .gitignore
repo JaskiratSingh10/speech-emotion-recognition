@@ -1,0 +1,24 @@
+# Virtual environment & caches
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.cph/
+tmp/
+
+# Raw datasets & archives
+Ravdess/
+cremad/
+*.zip
+
+# Embeddings & augmentation audio caches
+embeddings/
+data/noises/
+data/rirs/
+
+# Personal / sample audio files
+recordings/
+*.wav
+*.mp3
+*.mp4
+*.mpeg

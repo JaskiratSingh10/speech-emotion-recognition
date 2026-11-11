@@ -1,0 +1,7 @@
+experiment,train_set,test_set,uar,macro_f1,acc
+Exp 1: Zero-shot Cross-Corpus (RAVDESS -> CREMA-D),RAVDESS (864 clips),CREMA-D Test Clean (107 clips),29.153726708074533,26.95234234044495,29.906542056074763
+Exp 2: In-Domain CREMA-D (Clean Only),CREMA-D Train Clean (424 clips),CREMA-D Test Clean (107 clips),57.68633540372671,58.166963235722676,57.943925233644855
+Exp 3: In-Domain CREMA-D (Clean + Augmented),CREMA-D Train Clean+Aug (848 clips),CREMA-D Test Clean (107 clips),56.2888198757764,56.8840579710145,56.074766355140184
+Exp 4: Joint Multi-Corpus (RAVDESS + CREMA-D Aug),RAVDESS + CREMA-D (1712 clips),CREMA-D Test Clean (107 clips),58.07453416149069,58.4856360089304,57.943925233644855
+Exp 5a: Clean Model on Corrupted Test,Clean Train,Perturbed / Acoustic Distorted Test,30.745341614906835,28.346854662644137,31.775700934579437
+Exp 5b: Augmented Model on Corrupted Test,Augmented Train,Perturbed / Acoustic Distorted Test,29.658385093167706,25.558044987833107,30.8411214953271

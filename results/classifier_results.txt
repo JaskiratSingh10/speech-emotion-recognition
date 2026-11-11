@@ -1,0 +1,115 @@
+PHASE 3 CLASSIFIER RESULTS — EmbeddingGemma 2 Pass W (Whole-Clip)
+Seeds: [42, 123, 7] | Folds: 6 | GroupKFold by actor
+Baselines: Random=25.0%  Majority=33.3%
+
+Rank  Config                                      UAR (%)     ±     F1 (%)     ±
+----------------------------------------------------------------------
+1     SVM_linear_C0.1                               60.85  0.00      60.15  0.00
+2     SVM_rbf_C10.0                                 59.72  0.00      58.98  0.00
+3     SVM_linear_C10.0                              57.86  0.00      56.73  0.00
+4     SVM_linear_C0.01                              57.73  0.00      56.30  0.00
+5     MLP_512_lr0.001                               57.67  0.58      57.13  0.50
+6     SVM_linear_C1.0                               57.20  0.00      56.14  0.00
+7     MLP_512_lr0.0003                              57.16  1.04      56.57  1.25
+8     MLP_256x128_lr0.0003                          57.15  0.47      56.25  0.79
+9     MLP_512x256_lr0.001                           56.89  1.15      56.09  1.51
+10    MLP_512x256_lr0.0003                          56.74  0.69      55.92  0.62
+11    MLP_256_lr0.0003                              56.58  0.87      55.63  0.63
+12    MLP_256_lr0.001                               56.51  0.90      55.65  1.23
+13    MLP_256x128_lr0.001                           55.92  0.32      55.05  0.64
+14    XGB_lr0.1_n400_d4                             54.51  0.00      54.30  0.00
+15    XGB_lr0.05_n400_d4                            53.78  0.00      53.49  0.00
+16    XGB_lr0.1_n400_d6                             53.43  0.00      53.22  0.00
+17    XGB_lr0.1_n200_d4                             53.17  0.00      52.89  0.00
+18    XGB_lr0.05_n400_d6                            52.91  0.00      52.71  0.00
+19    XGB_lr0.1_n200_d6                             52.69  0.00      52.47  0.00
+20    XGB_lr0.05_n200_d6                            52.43  0.00      52.21  0.00
+21    XGB_lr0.05_n200_d4                            52.13  0.00      51.85  0.00
+22    SVM_rbf_C1.0                                  51.69  0.00      50.48  0.00
+23    SVM_rbf_C0.1                                  35.37  0.00      30.21  0.00
+24    SVM_rbf_C0.01                                 34.98  0.00      28.71  0.00
+
+Best overall config: SVM_linear_C0.1 with UAR=60.85%
+
+======================================================================
+BEST MODEL PER FAMILY & DETAILED EVALUATION
+======================================================================
+
+--- Best SVM: SVM_linear_C0.1 ---
+UAR: 60.85% ± 0.00%
+Macro-F1: 60.15% ± 0.00%
+Per-seed UARs: [60.85, 60.85, 60.85]
+Best Seed: 42 (Pooled OOF UAR: 60.85%)
+Classification Report:
+              precision    recall  f1-score   support
+
+       angry     0.6476    0.7083    0.6766       192
+       happy     0.5765    0.5885    0.5825       192
+     neutral     0.6897    0.6944    0.6920       288
+         sad     0.5060    0.4427    0.4722       192
+
+    accuracy                         0.6181       864
+   macro avg     0.6049    0.6085    0.6058       864
+weighted avg     0.6144    0.6181    0.6154       864
+
+Confusion Matrix (rows=true, cols=pred):
+               angry     happy   neutral       sad
+     angry       136        33        11        12
+     happy        36       113        21        22
+   neutral        14        25       200        49
+       sad        24        25        58        85
+
+--------------------------------------------------
+
+--- Best MLP: MLP_512_lr0.001 ---
+UAR: 57.67% ± 0.58%
+Macro-F1: 57.13% ± 0.50%
+Per-seed UARs: [58.46, 57.07, 57.47]
+Best Seed: 42 (Pooled OOF UAR: 58.46%)
+Classification Report:
+              precision    recall  f1-score   support
+
+       angry     0.6702    0.6667    0.6684       192
+       happy     0.5327    0.5521    0.5422       192
+     neutral     0.6544    0.6771    0.6655       288
+         sad     0.4830    0.4427    0.4620       192
+
+    accuracy                         0.5949       864
+   macro avg     0.5850    0.5846    0.5845       864
+weighted avg     0.5927    0.5949    0.5935       864
+
+Confusion Matrix (rows=true, cols=pred):
+               angry     happy   neutral       sad
+     angry       128        31        19        14
+     happy        36       106        20        30
+   neutral        12        34       195        47
+       sad        15        28        64        85
+
+--------------------------------------------------
+
+--- Best XGB: XGB_lr0.1_n400_d4 ---
+UAR: 54.51% ± 0.00%
+Macro-F1: 54.30% ± 0.00%
+Per-seed UARs: [54.51, 54.51, 54.51]
+Best Seed: 42 (Pooled OOF UAR: 54.51%)
+Classification Report:
+              precision    recall  f1-score   support
+
+       angry     0.6335    0.6302    0.6319       192
+       happy     0.5062    0.4271    0.4633       192
+     neutral     0.6118    0.7222    0.6624       288
+         sad     0.4503    0.4010    0.4242       192
+
+    accuracy                         0.5648       864
+   macro avg     0.5504    0.5451    0.5454       864
+weighted avg     0.5572    0.5648    0.5584       864
+
+Confusion Matrix (rows=true, cols=pred):
+               angry     happy   neutral       sad
+     angry       121        32        26        13
+     happy        37        82        36        37
+   neutral        13        23       208        44
+       sad        20        25        70        77
+
+--------------------------------------------------
+

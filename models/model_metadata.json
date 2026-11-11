@@ -1,0 +1,29 @@
+{
+  "model_name": "SVM_linear_C0.1",
+  "model_path": "/media/storage/MyUbuntu/speech_project/models/ser_classifier_svm.joblib",
+  "classes": [
+    "angry",
+    "happy",
+    "neutral",
+    "sad"
+  ],
+  "class_to_idx": {
+    "angry": 0,
+    "happy": 1,
+    "neutral": 2,
+    "sad": 3
+  },
+  "encoder": "google/embeddinggemma-2",
+  "embedding_dim": 768,
+  "validation_metric": "UAR (Macro-Recall)",
+  "validation_score": 0.6085,
+  "validation_f1": 0.6015,
+  "validation_protocol": "GroupKFold(n_splits=6) by actor across 3 random seeds",
+  "preprocessing": {
+    "sample_rate": 16000,
+    "mono": true,
+    "silence_trim_top_db": 25,
+    "peak_normalized": true,
+    "text_prompt": null
+  }
+}

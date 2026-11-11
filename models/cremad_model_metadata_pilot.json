@@ -1,0 +1,25 @@
+{
+  "model_name": "SVM_linear_C0.1",
+  "dataset": "CREMA-D",
+  "pilot": true,
+  "classes": [
+    "angry",
+    "happy",
+    "neutral",
+    "sad"
+  ],
+  "class_to_idx": {
+    "angry": 0,
+    "happy": 1,
+    "neutral": 2,
+    "sad": 3
+  },
+  "validation_metric": "UAR (Macro-Recall)",
+  "score": 58.07453416149069,
+  "model_path": "/media/storage/MyUbuntu/speech_project/models/ser_classifier_svm_cremad_pilot.joblib",
+  "augmentation": {
+    "background_noise": "ESC-50 (10-25 dB SNR)",
+    "pitch_shift": "\u00b11 to \u00b12 semitones",
+    "room_impulse_response": "Image Source Method (T60 0.18-0.48s)"
+  }
+}
